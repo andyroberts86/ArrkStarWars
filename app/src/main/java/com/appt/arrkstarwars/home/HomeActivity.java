@@ -1,7 +1,9 @@
-package com.appt.arrkstarwars;
+package com.appt.arrkstarwars.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.appt.arrkstarwars.R;
 
 public class HomeActivity extends AppCompatActivity {
 
