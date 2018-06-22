@@ -5,12 +5,9 @@ import com.appt.arrkstarwars.models.Character;
 import java.util.List;
 
 import io.reactivex.Observable;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
-
-import static io.reactivex.Observable.just;
 
 /**
  * I'd normally have a generic base class that handles the subscription lifecycle but as I only have
@@ -39,8 +36,8 @@ public class HomePresenter {
     protected void attach(View view) {
         this.view = view;
 
-        disposable.add(just(new Object())
-                .mergeWith(view.retryClicks())
+        disposable.add(view.retryClicks()
+                .startWith(true)
                 .flatMap(i -> loadCharacters())
                 .subscribe(Action::render));
     }
