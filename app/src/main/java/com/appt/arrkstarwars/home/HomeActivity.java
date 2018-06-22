@@ -1,5 +1,6 @@
 package com.appt.arrkstarwars.home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DividerItemDecoration;
@@ -7,6 +8,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.appt.arrkstarwars.R;
+import com.appt.arrkstarwars.detail.DetailActivity;
 import com.appt.arrkstarwars.models.Character;
 import com.appt.arrkstarwars.network.StarWarsService;
 
@@ -63,7 +65,14 @@ public class HomeActivity extends AppCompatActivity implements HomePresenter.Vie
     @Override
     public void showCharacters(List<Character> characters) {
         recycler.setVisibility(VISIBLE);
-        recycler.setAdapter(new CharactersAdapter(characters));
+        recycler.setAdapter(new CharactersAdapter(characters, character -> {
+            Intent intent = new Intent(this, DetailActivity.class);
+            intent.putExtra(DetailActivity.NAME_KEY, character.getName());
+            intent.putExtra(DetailActivity.HEIGHT_KEY, character.getHeight());
+            intent.putExtra(DetailActivity.MASS_KEY, character.getMass());
+            intent.putExtra(DetailActivity.CREATED_KEY, character.getCreated());
+            startActivity(intent);
+        }));
     }
 
     @Override

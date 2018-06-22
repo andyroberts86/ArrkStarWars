@@ -2,4 +2,8 @@
     <string name="app_name">ArrkStarWars</string>
     <string name="retry_button">Try Again</string>
     <string name="error_message">Oops! Something went wrong</string>
+    <string name="label_name">Name:</string>
+    <string name="label_height">Height (m):</string>
+    <string name="label_mass">Mass (kg):</string>
+    <string name="label_created">Created:</string>
 </resources>

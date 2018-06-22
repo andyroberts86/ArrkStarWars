@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/spacing_2x">
+
+    <TextView
+        android:id="@+id/name_label"
+        style="@style/Text.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/label_name" />
+
+    <TextView
+        android:id="@+id/name_value"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_1x"
+        app:layout_constraintStart_toEndOf="@id/name_label"
+        tools:text="Luke Skywalker" />
+
+    <TextView
+        android:id="@+id/height_label"
+        style="@style/Text.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_1x"
+        android:text="@string/label_height"
+        app:layout_constraintTop_toBottomOf="@id/name_label" />
+
+    <TextView
+        android:id="@+id/height_value"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_1x"
+        android:layout_marginTop="@dimen/spacing_1x"
+        app:layout_constraintStart_toEndOf="@id/height_label"
+        app:layout_constraintTop_toBottomOf="@id/name_label"
+        tools:text="1.74m" />
+
+    <TextView
+        android:id="@+id/mass_label"
+        style="@style/Text.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_1x"
+        android:text="@string/label_mass"
+        app:layout_constraintTop_toBottomOf="@id/height_label" />
+
+    <TextView
+        android:id="@+id/mass_value"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_1x"
+        android:layout_marginTop="@dimen/spacing_1x"
+        app:layout_constraintStart_toEndOf="@id/mass_label"
+        app:layout_constraintTop_toBottomOf="@id/height_label"
+        tools:text="82kg" />
+
+    <TextView
+        android:id="@+id/created_label"
+        style="@style/Text.Label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_1x"
+        android:text="@string/label_created"
+        app:layout_constraintTop_toBottomOf="@id/mass_label" />
+
+    <TextView
+        android:id="@+id/created_value"
+        style="@style/Text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/spacing_1x"
+        android:layout_marginTop="@dimen/spacing_1x"
+        app:layout_constraintStart_toEndOf="@id/created_label"
+        app:layout_constraintTop_toBottomOf="@id/mass_label"
+        tools:text="15/01/18 - 21:16" />
+
+</android.support.constraint.ConstraintLayout>

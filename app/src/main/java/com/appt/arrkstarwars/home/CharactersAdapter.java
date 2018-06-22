@@ -14,9 +14,11 @@ import java.util.List;
 
 public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.ViewModel> {
     private final List<Character> items;
+    private final ItemClickListener itemClickListener;
 
-    CharactersAdapter(List<Character> items) {
+    CharactersAdapter(List<Character> items, ItemClickListener itemClickListener) {
         this.items = items;
+        this.itemClickListener = itemClickListener;
     }
 
     @NonNull
@@ -29,11 +31,16 @@ public class CharactersAdapter extends RecyclerView.Adapter<CharactersAdapter.Vi
     @Override
     public void onBindViewHolder(@NonNull ViewModel holder, int position) {
         holder.name.setText(items.get(position).getName());
+        holder.name.setOnClickListener(view -> itemClickListener.onItemClicked(items.get(position)));
     }
 
     @Override
     public int getItemCount() {
         return items.size();
+    }
+
+    interface ItemClickListener {
+        void onItemClicked(Character character);
     }
 
     class ViewModel extends RecyclerView.ViewHolder {
