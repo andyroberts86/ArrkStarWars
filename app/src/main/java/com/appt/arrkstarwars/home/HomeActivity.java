@@ -2,6 +2,7 @@ package com.appt.arrkstarwars.home;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -38,6 +39,8 @@ public class HomeActivity extends AppCompatActivity implements HomePresenter.Vie
         error = findViewById(R.id.error);
         retry = findViewById(R.id.retry);
         loading = findViewById(R.id.loading);
+
+        recycler.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
     }
 
     @Override
