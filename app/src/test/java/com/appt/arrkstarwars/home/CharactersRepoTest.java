@@ -2,6 +2,7 @@ package com.appt.arrkstarwars.home;
 
 import com.appt.arrkstarwars.models.Character;
 import com.appt.arrkstarwars.models.GsonPeopleResponse;
+import com.appt.arrkstarwars.network.StarWarsService;
 
 import org.junit.Before;
 import org.junit.Test;

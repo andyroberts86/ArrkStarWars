@@ -1,4 +1,4 @@
-package com.appt.arrkstarwars.home;
+package com.appt.arrkstarwars.network;
 
 import com.appt.arrkstarwars.models.GsonPeopleResponse;
 

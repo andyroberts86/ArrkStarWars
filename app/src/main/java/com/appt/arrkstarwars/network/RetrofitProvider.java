@@ -10,7 +10,7 @@ public class RetrofitProvider {
     private static Retrofit retrofit;
 
     // Would normally provide using Dagger but it seems overkill for the scope of this app
-    public static Retrofit retrofit() {
+    public static Retrofit provideRetrofit() {
         if (retrofit == null) {
             retrofit = new Retrofit.Builder()
                     .baseUrl(SwapiUrl)

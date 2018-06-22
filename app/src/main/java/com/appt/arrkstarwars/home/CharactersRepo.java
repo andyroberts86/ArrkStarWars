@@ -1,6 +1,7 @@
 package com.appt.arrkstarwars.home;
 
 import com.appt.arrkstarwars.models.Character;
+import com.appt.arrkstarwars.network.StarWarsService;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,9 +11,7 @@ import io.reactivex.Single;
 public class CharactersRepo {
     private final StarWarsService starWarsService;
 
-    public CharactersRepo(StarWarsService starWarsService) {
-        // Would normally create using Dagger but it seems overkill for the scope of this app
-        //retrofit().create(StarWarsService.class);
+    CharactersRepo(StarWarsService starWarsService) {
         this.starWarsService = starWarsService;
     }
 
