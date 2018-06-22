@@ -59,7 +59,8 @@ public class HomeActivity extends AppCompatActivity implements HomePresenter.Vie
 
     @Override
     public void showCharacters(List<Character> characters) {
-
+        recycler.setVisibility(VISIBLE);
+        recycler.setAdapter(new CharactersAdapter(characters));
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.appt.arrkstarwars.models.Character;
 import java.util.List;
 
 import io.reactivex.Observable;
+import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.schedulers.Schedulers;
@@ -26,6 +27,7 @@ public class HomePresenter {
 
     private Observable<Action> loadCharacters() {
         return repo.getCharacters()
+                .subscribeOn(Schedulers.io())
                 .toObservable()
                 .<Action>map(ShowCharacters::new)
                 .observeOn(AndroidSchedulers.mainThread())
@@ -39,7 +41,6 @@ public class HomePresenter {
 
         disposable.add(just(new Object())
                 .mergeWith(view.retryClicks())
-                .subscribeOn(Schedulers.io())
                 .flatMap(i -> loadCharacters())
                 .subscribe(Action::render));
     }

@@ -6,6 +6,6 @@ import io.reactivex.Single;
 import retrofit2.http.GET;
 
 public interface StarWarsService {
-    @GET("/people")
+    @GET("people")
     Single<GsonPeopleResponse> getPeople();
 }
